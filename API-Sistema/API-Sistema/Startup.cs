@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,7 +10,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-
+using API_Sistema.Business;
+using API_Sistema.Business.Implementation;
+using API_Sistema.Repository;
+using API_Sistema.Repository.Implementation;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Http;
 
 namespace API_Sistema
 {
@@ -27,8 +32,18 @@ namespace API_Sistema
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContextPool<SQLContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SQLConnectionString")));
+
             services.AddControllers();
+
+            var connection = Configuration["SQLConnection:SQLConnectionString"];
+
+            services.AddEntityFrameworkSqlServer();
+            services.AddDbContext<SQLContext>(options => options.UseSqlServer(connection));
+            //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            //Dependency Injection
+            services.AddScoped<IUsuarioBusiness, UsuarioBusinessImplementation>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepositoryImplementation>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,6 +53,7 @@ namespace API_Sistema
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 

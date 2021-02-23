@@ -8,11 +8,11 @@ namespace API_Sistema.Model.Context
 {
     public class SQLContext : DbContext
     {
-        public SQLContext(DbContextOptions<DbContext> options) : base(options)
+        public SQLContext() { }
+
+        public SQLContext(DbContextOptions options) : base(options)
         {
-
         }
-
         public DbSet<Usuario> Usuarios { get; set; }
     }
 }
