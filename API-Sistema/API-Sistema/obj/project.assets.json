@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vinic\\source\\repos\\API-Sistema\\API-Sistema\\API-Sistema.csproj",
+      "projectUniqueName": "C:\\Projetos\\Test\\MazzaTest\\API-Sistema\\API-Sistema\\API-Sistema.csproj",
       "projectName": "API-Sistema",
-      "projectPath": "C:\\Users\\vinic\\source\\repos\\API-Sistema\\API-Sistema\\API-Sistema.csproj",
+      "projectPath": "C:\\Projetos\\Test\\MazzaTest\\API-Sistema\\API-Sistema\\API-Sistema.csproj",
       "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vinic\\source\\repos\\API-Sistema\\API-Sistema\\obj\\",
+      "outputPath": "C:\\Projetos\\Test\\MazzaTest\\API-Sistema\\API-Sistema\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
