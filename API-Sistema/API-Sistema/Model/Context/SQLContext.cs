@@ -14,5 +14,10 @@ namespace API_Sistema.Model.Context
         {
         }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
+        public DbSet<CategoriaProduto> CategoriaProdutos { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder
+        .UseLazyLoadingProxies();        
     }
 }

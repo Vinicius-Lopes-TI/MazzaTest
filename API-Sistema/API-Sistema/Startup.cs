@@ -39,11 +39,13 @@ namespace API_Sistema
 
             services.AddEntityFrameworkSqlServer();
             services.AddDbContext<SQLContext>(options => options.UseSqlServer(connection));
-            //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             //Dependency Injection
             services.AddScoped<IUsuarioBusiness, UsuarioBusinessImplementation>();
             services.AddScoped<IUsuarioRepository, UsuarioRepositoryImplementation>();
+
+            services.AddScoped<IProdutoBusiness, ProdutoBusinessImplementation>();
+            services.AddScoped<IProdutoRepository, ProdutoRepositoryImplementation>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
