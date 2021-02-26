@@ -9,5 +9,7 @@ namespace API_Sistema.Repository
     public interface IUsuarioRepository
     {
         Usuario ValidarEmailSenha(string email, string senha);
+
+        Usuario AtualizarInformacoesUsuario(Usuario usuario);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using API_Sistema.Business;
 using API_Sistema.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,6 +12,8 @@ namespace API_Sistema.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize("Bearer")]
+
     public class UsuarioController : ControllerBase
     {     
         private readonly ILogger<UsuarioController> _logger;

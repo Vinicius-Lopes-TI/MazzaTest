@@ -1,5 +1,6 @@
 ﻿using API_Sistema.Business;
 using API_Sistema.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace API_Sistema.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize("Bearer")]
     public class ProdutoController : Controller
     {
         private readonly IProdutoBusiness _produtoBusiness;
@@ -70,8 +72,11 @@ namespace API_Sistema.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
+            var produto = _produtoBusiness.BuscaPorId(id);
+            if (produto == null) return BadRequest();
+
             _produtoBusiness.Deletar(id);
-            return NoContent();
+            return Ok("O produto: '"+produto.Descricao +"' foi removido");
         }
     }
 }

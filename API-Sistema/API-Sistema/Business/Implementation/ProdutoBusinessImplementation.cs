@@ -80,7 +80,7 @@ namespace API_Sistema.Business.Implementation
         public string ValidaAtualizacaoProduto(Produto produto)
         {
             var produtoComMesmaDescricao = _repository.BuscaPorDescricao(produto.Descricao);
-            if (produtoComMesmaDescricao.Id != produto.Id)
+            if (produtoComMesmaDescricao != null && produtoComMesmaDescricao.Id != produto.Id)
                 return "Existe um produto com a mesma descrição já criado no sistema";
 
             return "";

@@ -20,5 +20,32 @@ namespace API_Sistema.Repository.Implementation
                 .SingleOrDefault(x => x.Email.ToLower().Trim() == email.ToLower().Trim() && x.Senha == senha);          
 
         }
+
+        public Usuario AtualizarInformacoesUsuario (Usuario usuario)
+        {
+            if (!Existe(usuario.Id))
+                return null;
+
+            var result = _context.Produtos.SingleOrDefault(p => p.Id.Equals(usuario.Id));
+            if (result != null)
+            {
+                try
+                {
+                    _context.Entry(result).CurrentValues.SetValues(usuario);
+                    _context.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+
+            return usuario;
+        }
+
+        public bool Existe(int id)
+        {
+            return _context.Usuarios.Any(p => p.Id.Equals(id));
+        }
     }
 }

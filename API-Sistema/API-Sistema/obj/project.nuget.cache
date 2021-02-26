@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "uozYfmPUddW1zkJLk61whsjdNvxncsjuTf182YkqlIsw3cBN4x2DoHLU6q7e++ttUM6jjAK3aIpWAGQ7aijCtA==",
+  "dgSpecHash": "KPbvmIIQ/S83iWB4cMgXvQ3VUGEhujmasIYmSitMxVOSQzoayjVi+MqTaaVBCi7zXu+7DCQwhFI2wzoIUH7xHA==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\Test\\MazzaTest\\API-Sistema\\API-Sistema\\API-Sistema.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vinic\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
+    "C:\\Users\\vinic\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.8\\microsoft.aspnetcore.authentication.jwtbearer.3.1.8.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\vinic\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\vinic\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
