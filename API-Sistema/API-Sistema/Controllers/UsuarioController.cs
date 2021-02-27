@@ -27,9 +27,9 @@ namespace API_Sistema.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get(string email, string senha)
+        public IActionResult Get([FromBody] UserVo user)
         {
-            var usuario = _usuarioBusiness.ValidarEmailSenha(email, senha);
+            var usuario = _usuarioBusiness.ValidarEmailSenha(user.Email, user.Senha);
             if (usuario == null) return NotFound();
 
             return Ok(usuario);

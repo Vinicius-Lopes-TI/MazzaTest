@@ -54,7 +54,8 @@ namespace API_Sistema.Business.Implementation
                 createDate.ToString(DATE_FORMAT),
                 expirationDate.ToString(DATE_FORMAT),
                 accessToken,
-                refreshToken
+                refreshToken,
+                user.Id
                 );
         }
     }
